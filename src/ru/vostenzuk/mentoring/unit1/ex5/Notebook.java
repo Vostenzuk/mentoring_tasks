@@ -15,7 +15,7 @@ public class Notebook {
     /**
      * Идентификатор блокнота
      */
-    UUID id;
+    private UUID id;
     /**
      * Название блокнота
      */
