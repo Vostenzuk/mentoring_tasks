@@ -1,7 +1,7 @@
 package ru.vostenzuk.mentoring.unit2.ex5;
 
 @FunctionalInterface
-public interface Sum {
+public interface Sum<T extends Number> {
 
-    Number count(Number a, Number b);
+  T count(T a, T b);
 }
