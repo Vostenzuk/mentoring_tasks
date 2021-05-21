@@ -6,8 +6,7 @@ import java.util.Comparator;
 
 public class ColourComparator implements Comparator<AbstractDrawingInstrument> {
 
-    @Override
-    public int compare(AbstractDrawingInstrument o1, AbstractDrawingInstrument o2) {
-        return o1.getColour().compareTo(o2.getColour());
-    }
+  public int compare(AbstractDrawingInstrument o1, AbstractDrawingInstrument o2) {
+    return o1.getColour().compareTo(o2.getColour());
+  }
 }

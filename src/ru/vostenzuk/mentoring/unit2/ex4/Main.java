@@ -18,21 +18,22 @@ import java.util.List;
  */
 public class Main {
 
-    public static void main(String[] args) {
-        StarterPack starterPack = StarterPack.create();
-        List<AbstractDrawingInstrument> instruments = new ArrayList<>(starterPack.getItems());
+  public static void main(String[] args) {
+    StarterPack starterPack = StarterPack.create();
+    List<AbstractDrawingInstrument> instruments = new ArrayList<>(starterPack.getItems());
 
-        System.out.println("Before sorting: " + instruments);
-        instruments.sort(Comparator.comparing(AbstractDrawingInstrument::getPrice));
-        System.out.println("After sorting by price: " + instruments);
+    System.out.println("Before sorting: " + instruments);
+    instruments.sort(Comparator.comparing(AbstractDrawingInstrument::getPrice));
+    System.out.println("After sorting by price: " + instruments);
 
-        instruments.sort(Comparator.comparing(AbstractDrawingInstrument::getColour));
-        System.out.println("Sorted by colour: " + instruments);
+    instruments.sort(Comparator.comparing(AbstractDrawingInstrument::getColour));
+    System.out.println("Sorted by colour: " + instruments);
 
+    instruments
+        .add(new Pen("red", 10.0)); // item with same price to test sorting by colour after price
 
-        instruments.add(new Pen("red", 10.0)); // item with same price to test sorting by colour after price
-
-        instruments.sort(Comparator.comparing(AbstractDrawingInstrument::getPrice).thenComparing(AbstractDrawingInstrument::getColour));
-        System.out.println("Sorted by price and then colour: " + instruments);
-    }
+    instruments.sort(Comparator.comparing(AbstractDrawingInstrument::getPrice)
+        .thenComparing(AbstractDrawingInstrument::getColour));
+    System.out.println("Sorted by price and then colour: " + instruments);
+  }
 }

@@ -10,14 +10,15 @@ import java.util.List;
  */
 public class Main {
 
-    public static void main(String[] args) {
+  public static void main(String[] args) {
 
-        List<Messenger> messengers = List.of(new WhatsApp(), new Telegram(), new Viber());
-        User user = new User("Fjodor");
-        for (Messenger messenger : messengers) {
-            user.setMessenger(messenger);
-            user.readMessage();
-            user.sendMessage("Hey!");
-        }
+    List<Messenger> messengers = List.of(new WhatsApp(), new Telegram(), new Viber());
+    User user = new User("Fjodor");
+
+    for (Messenger messenger : messengers) {
+      user.setMessenger(messenger);
+      user.readMessage();
+      user.sendMessage("Hey!");
     }
+  }
 }
